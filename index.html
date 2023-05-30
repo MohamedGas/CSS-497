@@ -97,6 +97,24 @@
       Explanation: The minimum window substring "BANC" includes 'A', 'B', and 'C' from string t.
     </p>
   </div>
+      
+      <div style="background-color: #f2f2f2; padding: 10px; margin-bottom: 20px;">
+  <p>The solution is similar to Find Longest Subarray with Sum Smaller Than Target; it's a find longest sliding window problem.</p>
+  <p>In this case, the comparison for checking a valid window is changed to compare that for every character in check, to see if the window contains enough of that character.</p>
+</div>
+
+<div style="background-color: #f2f2f2; padding: 10px; margin-bottom: 20px;">
+  <p>We could apply the find longest sliding window template to this question. To check the validity of a window, we introduce two variables (counters): <code>required</code> and <code>satisfied</code>.</p>
+  <p><code>required</code>: the number of distinct characters we are required to have. Counter for distinct characters that appeared in check.</p>
+  <p><code>satisfied</code>: the number of distinct characters that are satisfied within the current window. Now, we can check whether <code>required == satisfied</code> to confirm if the window is valid.</p>
+  <p>Since we only care about those characters that appear in check, we will only make changes to <code>satisfied</code> when the added/removed character appears in check. If the current window contains exactly the same amount of one specific character as in check after adding the counter, then we increase <code>satisfied</code> by 1 (we will not update <code>satisfied</code> on all other additions). If we remove a character from the window and that character is part of check, we check whether the amount has dropped below check's amount.</p>
+</div>
+
+<div style="background-color: #f2f2f2; padding: 10px;">
+  <p>Time Complexity: O(n)</p>
+  <p>Space Complexity: O(n)</p>
+</div>
+
 </div>
 
   </div>
