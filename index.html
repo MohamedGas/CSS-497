@@ -61,8 +61,10 @@
   </header>
 
   <div class="container">
-    <a class="button" href="#">Explanation</a>
-    <a class="button" href="#">Solution</a>
+  
+      <a class="button" href="#" onclick="showCode()" >Explanation</a>
+      <a class="button" href="#">Solution</a>
+    
     <div class="content">
       <h2>Minimum Window Substring</h2> 
 <p style="font-family: Arial, sans-serif; font-size: 14px;">Given two strings, original and check, return the minimum substring of original such that each character in check, including duplicates, are included in this substring. By "minimum", I mean the shortest substring. If two substrings that satisfy the condition have the same length, the one that comes lexicographically first is smaller.</p>
@@ -99,7 +101,6 @@
   </div>
       
 
-      <a class="button" href="#" onclick="showCode()" >Solution</a>
 <div id="code" style="display: none; font-family: Arial, sans-serif; font-size: 14px; background-color: #f2f2f2; padding: 10px;">
   <p><strong>Intuition</strong></p>
   <p>Use HashMap to take a count of every element of t.</p>
