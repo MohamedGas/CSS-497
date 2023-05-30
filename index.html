@@ -32,14 +32,9 @@
       margin: 0 auto;
       padding: 20px;
     }
-  #image-container {
+ .image-container {
       display: none;
-      margin-top: 10px;
-      padding: 10px;
-      max-width: 960px;
-    }
-    #image-container img {
-      width: 800px;
+      margin: 100px;
     }
     .button {
       background-color: #4285f4;
@@ -139,11 +134,9 @@ else hm1.put(ch, hm1.get(ch) - 1);</code></pre>
 </div>
     
     
-<div class ="container>
-  <div id="image-container">
-    <img src="https://github.com/MohamedGas/CSS-497/blob/main/Solution.png?raw=true" alt="Solution Image">
+<div class="image-container">
+    <img src="https://github.com/MohamedGas/CSS-497/blob/main/Solution.png" alt="Solution Image">
   </div>
-    </div>
 
 <script>
   function showCode() {
@@ -154,8 +147,8 @@ else hm1.put(ch, hm1.get(ch) - 1);</code></pre>
       codeDiv.style.display = "none";
     }
   }
-   function toggleImage() {
-      var imageContainer = document.getElementById('image-container');
+ function toggleImage() {
+      var imageContainer = document.querySelector('.image-container');
       if (imageContainer.style.display === 'none') {
         imageContainer.style.display = 'block';
       } else {
