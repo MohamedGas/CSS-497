@@ -53,6 +53,7 @@
       background-color: #fff;
       padding: 20px;
       margin-top: 20px;
+      display: block;
     }
   </style>
 </head>
@@ -64,9 +65,10 @@
   </header>
 
   <div class="container">
-  
+   <a class="button" href="#" onclick="toggleContent()">Question</a>
       <a class="button" href="#" onclick="showCode()" >Explanation</a>
       <a class="button" href="#" onclick="toggleImage()">Solution</a>
+    
      
     
     <div class="content">
@@ -147,6 +149,10 @@ else hm1.put(ch, hm1.get(ch) - 1);</code></pre>
       codeDiv.style.display = "none";
     }
   }
+   function toggleContent() {
+      var content = document.querySelector('.content');
+      content.style.display = (content.style.display === 'none') ? 'block' : 'none';
+    }
  function toggleImage() {
       var imageContainer = document.querySelector('.image-container');
       if (imageContainer.style.display === 'none') {
