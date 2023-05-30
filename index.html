@@ -98,7 +98,8 @@
     </p>
   </div>
       
- <div style="font-family: Arial, sans-serif; font-size: 14px; background-color: #f2f2f2; padding: 10px;">
+<button onclick="showCode()">Show Code</button>
+<div id="code" style="display: none; font-family: Arial, sans-serif; font-size: 14px; background-color: #f2f2f2; padding: 10px;">
   <p><strong>Intuition</strong></p>
   <p>Use HashMap to take a count of every element of t.</p>
   <p>Then use Two pointer on s to match result.</p>
@@ -124,6 +125,18 @@ if(hm1.getOrDefault(ch, 0) &lt;= hm2.getOrDefault(ch, 0)){
 else hm1.put(ch, hm1.get(ch) - 1);</code></pre>
   <p>Now check if HashMap for s is lesser than HashMap for t, then decrease count. It means we can still get a lesser length of the string.</p>
 </div>
+
+<script>
+  function showCode() {
+    var codeDiv = document.getElementById("code");
+    if (codeDiv.style.display === "none") {
+      codeDiv.style.display = "block";
+    } else {
+      codeDiv.style.display = "none";
+    }
+  }
+</script>
+
 
 
 </div>
