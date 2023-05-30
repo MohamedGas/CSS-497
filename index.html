@@ -32,7 +32,10 @@
       margin: 0 auto;
       padding: 20px;
     }
-
+ .image-container {
+      display: none;
+      margin-top: 10px;
+    }
     .button {
       background-color: #4285f4;
       color: #fff;
@@ -63,7 +66,7 @@
   <div class="container">
   
       <a class="button" href="#" onclick="showCode()" >Explanation</a>
-      <a class="button" href="#">Solution</a>
+      <a class="button" href="#" onclick="showImage()">Solution</a>
     
     <div class="content">
       <h2>Minimum Window Substring</h2> 
@@ -128,6 +131,11 @@ if(hm1.getOrDefault(ch, 0) &lt;= hm2.getOrDefault(ch, 0)){
 else hm1.put(ch, hm1.get(ch) - 1);</code></pre>
   <p>Now check if HashMap for s is lesser than HashMap for t, then decrease count. It means we can still get a lesser length of the string.</p>
 </div>
+    
+    
+  <div class="image-container">
+    <img src="https://github.com/MohamedGas/CSS-497/blob/main/Solution.png" alt="Solution Image">
+  </div>
 
 <script>
   function showCode() {
@@ -138,6 +146,10 @@ else hm1.put(ch, hm1.get(ch) - 1);</code></pre>
       codeDiv.style.display = "none";
     }
   }
+   function showImage() {
+      var imageContainer = document.querySelector('.image-container');
+      imageContainer.style.display = 'block';
+    }
 </script>
 
 
