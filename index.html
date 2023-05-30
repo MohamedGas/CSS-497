@@ -32,10 +32,11 @@
       margin: 0 auto;
       padding: 20px;
     }
- .image-container {
+  #image-container {
       display: none;
       margin-top: 10px;
-   padding: 10px;
+      padding: 10px;
+      max-width: 960px;
     }
     .button {
       background-color: #4285f4;
@@ -67,7 +68,8 @@
   <div class="container">
   
       <a class="button" href="#" onclick="showCode()" >Explanation</a>
-      <a class="button" href="#" onclick="showImage()">Solution</a>
+      <a class="button" href="#" onclick="toggleImage()">Solution</a>
+     
     
     <div class="content">
       <h2>Minimum Window Substring</h2> 
@@ -134,7 +136,8 @@ else hm1.put(ch, hm1.get(ch) - 1);</code></pre>
 </div>
     
     
-  <div id="image-container" style="display: none; margin-top: 10px; padding: 10px; max-width: 960px" >
+
+  <div id="image-container">
     <img src="https://github.com/MohamedGas/CSS-497/blob/main/Solution.png?raw=true" alt="Solution Image">
   </div>
 
@@ -147,14 +150,13 @@ else hm1.put(ch, hm1.get(ch) - 1);</code></pre>
       codeDiv.style.display = "none";
     }
   }
-   function showImage() {
-      var imageContainer = document.getElementById('.image-container');
-     if (imageContainer.style.display === "none") {
-      imageContainer.style.display = "block";
-    } else {
-      imageContainer.style.display = "none";
-    }
-       
+    function toggleImage() {
+      var imageContainer = document.getElementById('image-container');
+      if (imageContainer.style.display === 'none') {
+        imageContainer.style.display = 'block';
+      } else {
+        imageContainer.style.display = 'none';
+      }
     }
 </script>
 
