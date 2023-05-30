@@ -111,12 +111,12 @@
   <p>i is used to take character and j is used to release characters.</p>
   <p>Lets add all occurrences of character in t.</p>
   <pre style="margin: 0; padding: 0;"><code>for(int i = 0; i &lt; t.length(); i++){
-    char ch = t.charAt(i);
+    char ch = check.charAt(i);
     hm2.put(ch, hm2.getOrDefault(ch, 0) + 1);
 }</code></pre>
   <p>Now let's take two pointers i and j and count variable mcnt.</p>
   <p>So I will increase my count if my HashMap of t (count of particular variable) is greater than HashMap of s (count of that particular variable).</p>
-  <pre style="margin: 0; padding: 0;"><code>char ch = s.charAt(i);
+  <pre style="margin: 0; padding: 0;"><code>char ch = original.charAt(i);
 if(hm1.getOrDefault(ch, 0) &lt;= hm2.getOrDefault(ch, 0)){
     mcnt++;
 }</code></pre>
