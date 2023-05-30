@@ -98,22 +98,33 @@
     </p>
   </div>
       
-      <div style="background-color: #f2f2f2; padding: 10px; margin-bottom: 20px;">
-  <p>The solution is similar to Find Longest Subarray with Sum Smaller Than Target; it's a find longest sliding window problem.</p>
-  <p>In this case, the comparison for checking a valid window is changed to compare that for every character in check, to see if the window contains enough of that character.</p>
+   <div style="font-family: Arial, sans-serif; font-size: 14px;">
+  <p><strong>Intuition</strong></p>
+  <p>Use HashMap to take a count of every element of t.</p>
+  <p>Then use Two pointer on s to match result.</p>
+
+  <p><strong>Approach</strong></p>
+  <p>i is used to take character and j is used to release characters.</p>
+  <p>Lets add all occurrences of character in t.</p>
+  <pre style="margin: 0; padding: 0;"><code>for(int i = 0; i &lt; t.length(); i++){
+    char ch = t.charAt(i);
+    hm2.put(ch, hm2.getOrDefault(ch, 0) + 1);
+}</code></pre>
+  <p>Now let's take two pointers i and j and count variable mcnt.</p>
+  <p>So I will increase my count if my HashMap of t (count of particular variable) is greater than HashMap of s (count of that particular variable).</p>
+  <pre style="margin: 0; padding: 0;"><code>char ch = s.charAt(i);
+if(hm1.getOrDefault(ch, 0) &lt;= hm2.getOrDefault(ch, 0)){
+    mcnt++;
+}</code></pre>
+  <p>After this part, now it is time to calculate the minimum one.</p>
+  <p>So, I will make a String potential answer (pans) and the substring will be from j + 1 to i + 1.</p>
+  <p>If pans.length is smaller than answer.length, then it means it has the minimum length, so I will store it in ans. And I will increase j to find more smaller.</p>
+  <p>Now it is time to release character, so we will check if frequency is 1 then directly remove from HashMap else decrease the frequency by one.</p>
+  <pre style="margin: 0; padding: 0;"><code>if(hm1.get(ch) == 1) hm1.remove(ch);
+else hm1.put(ch, hm1.get(ch) - 1);</code></pre>
+  <p>Now check if HashMap for s is lesser than HashMap for t, then decrease count. It means we can still get a lesser length of the string.</p>
 </div>
 
-<div style="background-color: #f2f2f2; padding: 10px; margin-bottom: 20px;">
-  <p>We could apply the find longest sliding window template to this question. To check the validity of a window, we introduce two variables (counters): <code>required</code> and <code>satisfied</code>.</p>
-  <p><code>required</code>: the number of distinct characters we are required to have. Counter for distinct characters that appeared in check.</p>
-  <p><code>satisfied</code>: the number of distinct characters that are satisfied within the current window. Now, we can check whether <code>required == satisfied</code> to confirm if the window is valid.</p>
-  <p>Since we only care about those characters that appear in check, we will only make changes to <code>satisfied</code> when the added/removed character appears in check. If the current window contains exactly the same amount of one specific character as in check after adding the counter, then we increase <code>satisfied</code> by 1 (we will not update <code>satisfied</code> on all other additions). If we remove a character from the window and that character is part of check, we check whether the amount has dropped below check's amount.</p>
-</div>
-
-<div style="background-color: #f2f2f2; padding: 10px;">
-  <p>Time Complexity: O(n)</p>
-  <p>Space Complexity: O(n)</p>
-</div>
 
 </div>
 
