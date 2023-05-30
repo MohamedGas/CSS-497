@@ -148,8 +148,13 @@ else hm1.put(ch, hm1.get(ch) - 1);</code></pre>
     }
   }
    function showImage() {
-      var imageContainer = document.querySelector('.image-container');
-      imageContainer.style.display = 'block';
+      var imageContainer = document.getElementById('.image-container');
+     if (imageContainer.style.display === "none") {
+      imageContainer.style.display = "block";
+    } else {
+      imageContainer.style.display = "none";
+    }
+       
     }
 </script>
 
